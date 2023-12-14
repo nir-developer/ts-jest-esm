@@ -19,6 +19,7 @@ export class PasswordChecker {
     this.checkLength(password, reasons);
     this.checkLowerCase(password, reasons);
     this.checkUpperCase(password, reasons);
+    this.checkNumber(password, reasons);
 
     valid = reasons.length === 0;
 
@@ -40,6 +41,16 @@ export class PasswordChecker {
   private checkLowerCase(password, reasons) {
     if (password.toUpperCase() === password)
       reasons.push(PasswordErrors.NO_LOWER_CASE);
+  }
+
+  /**HOW TO IMPLEMENT IT???? REGULAR EXPRESSION!!
+   */
+  private checkNumber(password, reasons) {
+    //if (typeof +password !== "number") reasons.push(PasswordErrors.NO_NUMBER);
+    const hasNumber = /\d/;
+    if (!hasNumber.test(password)) {
+      reasons.push(PasswordErrors.NO_NUMBER);
+    }
   }
 
   //AFTER ITER 2 - WORKED AND TESTED!! BEFORE STARTING ITER 3 - REFACTOR THIS CODE !!

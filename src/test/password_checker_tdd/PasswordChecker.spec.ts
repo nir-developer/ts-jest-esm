@@ -114,12 +114,22 @@ describe("PasswordChecker Project", () => {
     // expect(sut.checkPassword(testPassword)).toBe(true);
   });
 
-  //REQUIREMENT 3 - MUST HAVE A NUMBER
-  // it("Password without a number is invalid", () => {
-  //   const testPassword = "ssssAAAA";
+  //REQUIREMENT 3 - MUST HAVE A NUMBER(AFTER REFACTORING! REQ 1 + REQ 2 WORK)
+  it("Password without a number is invalid", () => {
+    const testPassword = "ssssAAAA";
 
-  //   const actual = sut.checkPassword(testPassword);
+    const actual = sut.checkPassword(testPassword);
 
-  //   expect(actual.valid).toBe(false);
-  // });
+    expect(actual.valid).toBe(false);
+    expect(actual.reasons).toContain(PasswordErrors.NO_NUMBER);
+  });
+
+  it("Password with a number is valid", () => {
+    const testPassword = "23";
+
+    const actual = sut.checkPassword(testPassword);
+
+    //expect(actual.valid).toBe(false);
+    expect(actual.reasons).not.toContain(PasswordErrors.NO_NUMBER);
+  });
 });
