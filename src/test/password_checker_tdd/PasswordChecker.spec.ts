@@ -113,4 +113,13 @@ describe("PasswordChecker Project", () => {
 
     // expect(sut.checkPassword(testPassword)).toBe(true);
   });
+
+  //REQUIREMENT 3 - MUST HAVE A NUMBER
+  // it("Password without a number is invalid", () => {
+  //   const testPassword = "ssssAAAA";
+
+  //   const actual = sut.checkPassword(testPassword);
+
+  //   expect(actual.valid).toBe(false);
+  // });
 });

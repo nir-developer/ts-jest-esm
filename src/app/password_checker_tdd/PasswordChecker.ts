@@ -2,6 +2,7 @@ export enum PasswordErrors {
   SHORT = "Password is too short!",
   NO_UPPER_CASE = "Upper case letter required!",
   NO_LOWER_CASE = "Lower case letter required!",
+  NO_NUMBER = "No number",
 }
 
 export interface CheckResult {
@@ -10,14 +11,14 @@ export interface CheckResult {
 }
 
 export class PasswordChecker {
+  //ITER 3 : REFACTORING - EXTRACT THE IFS TO SEPARATE METHODS
   public checkPassword(password: string): CheckResult {
     let reasons = [];
     let valid;
-    if (password.length < 8) reasons.push(PasswordErrors.SHORT);
-    if (password.toLowerCase() === password)
-      reasons.push(PasswordErrors.NO_UPPER_CASE);
-    if (password.toUpperCase() === password)
-      reasons.push(PasswordErrors.NO_LOWER_CASE);
+
+    this.checkLength(password, reasons);
+    this.checkLowerCase(password, reasons);
+    this.checkUpperCase(password, reasons);
 
     valid = reasons.length === 0;
 
@@ -26,6 +27,39 @@ export class PasswordChecker {
       reasons,
     };
   }
+
+  private checkLength(password, reasons) {
+    if (password.length < 8) reasons.push(PasswordErrors.SHORT);
+  }
+
+  private checkUpperCase(password, reasons) {
+    if (password.toLowerCase() === password)
+      reasons.push(PasswordErrors.NO_UPPER_CASE);
+  }
+
+  private checkLowerCase(password, reasons) {
+    if (password.toUpperCase() === password)
+      reasons.push(PasswordErrors.NO_LOWER_CASE);
+  }
+
+  //AFTER ITER 2 - WORKED AND TESTED!! BEFORE STARTING ITER 3 - REFACTOR THIS CODE !!
+  //EXTRACT EACH IF TO A PRIVATE FUNCTION
+  // public checkPassword(password: string): CheckResult {
+  //   let reasons = [];
+  //   let valid;
+  //   if (password.length < 8) reasons.push(PasswordErrors.SHORT);
+  //   if (password.toLowerCase() === password)
+  //     reasons.push(PasswordErrors.NO_UPPER_CASE);
+  //   if (password.toUpperCase() === password)
+  //     reasons.push(PasswordErrors.NO_LOWER_CASE);
+
+  //   valid = reasons.length === 0;
+
+  //   return {
+  //     valid,
+  //     reasons,
+  //   };
+  // }
 
   //AFTER ITER 1 - ALL 3 REQUIREMENTS WORKED AND TESTED!
   // public checkPassword(password: string) {
