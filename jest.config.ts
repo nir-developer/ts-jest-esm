@@ -1,18 +1,48 @@
-import type { Config } from "@jest/types";
+/** @type {import('jest').Config} */
 
-const baseDir='<rootDir>/src/app/doubles';
-const baseTestDir='<rootDir>/src/test/doubles';
-const config: Config.InitialOptions = {
+// <<<<<<< HEAD
+// const baseDir='<rootDir>/src/app/doubles';
+// const baseTestDir='<rootDir>/src/test/doubles';
+// const config: Config.InitialOptions = {
+//   preset: "ts-jest",
+//   testEnvironment: "node",
+//   verbose: true,
+//   collectCoverage:true,
+//   collectCoverageFrom:[
+//     `${baseDir}/**/*.ts`
+//   ],
+//   testMatch:[
+//     `${baseDir}/**/*.ts`
+//   ]
+=======
+//location to collect coverage and tests
+const baseDir = "<rootDir>/src/app/password_checker_tdd";
+const baseTestDir = "<rootDir>/src/test/password_checker_tdd";
+
+const config = {
+  verbose: true,
   preset: "ts-jest",
   testEnvironment: "node",
-  verbose: true,
-  collectCoverage:true,
-  collectCoverageFrom:[
-    `${baseDir}/**/*.ts`
+
+  collectCoverage: true,
+  collectCoverageFrom: [
+    // '**'  - for all js files inside app folder , /
+    //"<rootDir>/src/app/**/*.js",
+    `${baseDir}/**/*.ts`,
   ],
-  testMatch:[
-    `${baseDir}/**/*.ts`
-  ]
+  testMatch: [`${baseTestDir}/**/*.ts`],
+>>>>>>> f3f68d473cda10f9ecb4aced70daa8f39f873860
 };
 
-export default config;
+module.exports = config;
+
+////////////////////////////////
+// import type { Config } from "@jest/types";
+
+// const config: Config.InitialOptions = {
+//   preset: "ts-jest",
+//   testEnvironment: "node",
+//   verbose: true,
+// };
+
+// export default config;
