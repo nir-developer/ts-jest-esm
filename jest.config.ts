@@ -1,23 +1,12 @@
 /** @type {import('jest').Config} */
 
-// <<<<<<< HEAD
-// const baseDir='<rootDir>/src/app/doubles';
-// const baseTestDir='<rootDir>/src/test/doubles';
-// const config: Config.InitialOptions = {
-//   preset: "ts-jest",
-//   testEnvironment: "node",
-//   verbose: true,
-//   collectCoverage:true,
-//   collectCoverageFrom:[
-//     `${baseDir}/**/*.ts`
-//   ],
-//   testMatch:[
-//     `${baseDir}/**/*.ts`
-//   ]
-
-//location to collect coverage and tests
-const baseDir = "<rootDir>/src/app/password_checker_tdd";
-const baseTestDir = "<rootDir>/src/test/password_checker_tdd";
+//////////////////////////////////////////
+//Main branch will update this before each checkout!
+///////////////////////////////////////////////
+// const baseDir = "<rootDir>/src/app/password_checker_tdd";
+// const baseTestDir = "<rootDir>/src/test/password_checker_tdd";
+const baseDir = "<rootDir>/src/app/doublesd";
+const baseTestDir = "<rootDir>/src/test/doubles";
 
 const config = {
   verbose: true,
