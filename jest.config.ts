@@ -5,7 +5,7 @@
 ///////////////////////////////////////////////
 // const baseDir = "<rootDir>/src/app/password_checker_tdd";
 // const baseTestDir = "<rootDir>/src/test/password_checker_tdd";
-const baseDir = "<rootDir>/src/app/doublesd";
+const baseDir = "<rootDir>/src/app/doubles";
 const baseTestDir = "<rootDir>/src/test/doubles";
 
 const config = {
