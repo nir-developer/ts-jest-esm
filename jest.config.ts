@@ -14,7 +14,7 @@
 //   testMatch:[
 //     `${baseDir}/**/*.ts`
 //   ]
-=======
+
 //location to collect coverage and tests
 const baseDir = "<rootDir>/src/app/password_checker_tdd";
 const baseTestDir = "<rootDir>/src/test/password_checker_tdd";
@@ -31,7 +31,6 @@ const config = {
     `${baseDir}/**/*.ts`,
   ],
   testMatch: [`${baseTestDir}/**/*.ts`],
->>>>>>> f3f68d473cda10f9ecb4aced70daa8f39f873860
 };
 
 module.exports = config;
